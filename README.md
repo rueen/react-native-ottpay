@@ -21,11 +21,11 @@ react-native link react-native-ottpay
 
 #### `Open project.xcodeproj in Xcode`
 Drag `ottpay.xcodeproj` to your project on Xcode
-![xcode-add](./AddToLibraries.png)
+![xcode-add](https://raw.githubusercontent.com/rueen/react-native-ottpay/main/AddToLibraries.png)
 
 #### Link `libottpay.a` binary with libraries
 Click on your main project file (the one that represents the `.xcodeproj`). Add `libottpay.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-![xcode-link](./AddToBuildPhases.png)
+![xcode-link](https://raw.githubusercontent.com/rueen/react-native-ottpay/main/AddToBuildPhases.png)
 
 </details>
 <details>
