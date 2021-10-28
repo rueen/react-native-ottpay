@@ -33,14 +33,14 @@ Click on your main project file (the one that represents the `.xcodeproj`). Add 
 
 #### `android/settings.gradle`
 
-```js
+```java
 include ':react-native-ottpay'
 project(':react-native-ottpay').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-ottpay/android')
 ```
 
 #### `android/app/build.gradle`
 
-```js
+```java
 dependencies {
    ...
    implementation project(':react-native-ottpay')
@@ -69,7 +69,7 @@ protected List<ReactPackage> getPackages() {
 </details>
 
 ### iOS Setup
-Select your project. Add the following System libraries to your project's `Build Phases` -> `Link Binary With Libraries`:
+#### Select your project. Add the following System libraries to your project's `Build Phases` -> `Link Binary With Libraries`:
   - `QuartzCore.framework`
   - `CoreTelephony.framework`
   - `CoreText.framework`
@@ -86,8 +86,15 @@ Select your project. Add the following System libraries to your project's `Build
 Then add the `AlipaySDK.framework`(under your `node_modules/react-native-ottpay/ios` folder) librarie to your project's `Build Phases` -> `Link Binary With Libraries`
 
 If `framework not found AlipaySDK` please drag the folder `node_modules/react-native-ottpay/ios` to your project's `Build Setting` -> `Framework Search Paths`
-  
 
+#### copy the following in AppDelegate.m:
+```objc
+#import "IPNCrossBorderPluginAPi.h"
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [IPNCrossBorderPluginAPi applicationDidBecomeActive];
+    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+}
+```
 
 ### Use
 ```js
