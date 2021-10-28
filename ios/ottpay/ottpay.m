@@ -21,19 +21,14 @@
     return dispatch_get_main_queue();
 }
 RCT_EXPORT_MODULE(OttPay);
-RCT_EXPORT_METHOD(pay:(NSString *)payInfo)
+RCT_EXPORT_METHOD(pay:(NSString *)payInfo
+                  universalLink:(NSString *)universalLink)
 {
-    RCTLogInfo(@"报文信息： %@", payInfo);
+//    RCTLogInfo(@"报文信息： %@", payInfo);
     
     UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-//    UIViewController *root = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
-//    while (root.presentedViewController != nil) {
-//      root = root.presentedViewController;
-//    }
-
-    
-    [IPNCrossBorderPluginAPi pay:payInfo AndScheme:@"IPaynowCrossBorderGatherPluginDemo" viewController:rootViewController delegate:self universalLink:@"https://app-test.ipaynow.cn/"];
+    [IPNCrossBorderPluginAPi pay:payInfo AndScheme:@"IPaynowCrossBorderGatherPluginDemo" viewController:rootViewController delegate:self universalLink:universalLink];
     
 }
 

@@ -93,7 +93,9 @@ If `framework not found AlipaySDK` please drag the folder `node_modules/react-na
 ```js
 import OttPay from 'react-native-ottpay';
 
-const payStr = 'appId=1627353991468111&mhtAmtCurrFlag=1&mhtCharset=UTF-8&mhtCurrencyType=USD&mhtOrderAmt=1&mhtOrderDetail=mhtOrderDetail&mhtOrderName=merchantTest&mhtOrderNo=20211026105613&mhtOrderStartTime=20211026105530&mhtOrderTimeOut=3600&mhtOrderType=01&notifyUrl=http%3A%2F%2Flocalhost%3A10802%2F&payChannelType=90&mhtSignType=MD5&mhtSignature=c0fbeceaf63331b60b908d0526fc3f82';
+const payStr = 'appId=*******&mhtAmtCurrFlag=1&mhtCharset=UTF-8&mhtCurrencyType=USD&mhtOrderAmt=1&mhtOrderDetail=mhtOrderDetail&mhtOrderName=merchantTest&mhtOrderNo=20211026105613&mhtOrderStartTime=20211026105530&mhtOrderTimeOut=3600&mhtOrderType=01&notifyUrl=http%3A%2F%2Flocalhost%3A10802%2F&payChannelType=90&mhtSignType=MD5&mhtSignature=c0fbeceaf63331b60b908d0526fc3f82';
 
 OttPay.startPay(payStr);
 ```
+
+[海带跨境](https://cloud.seatent.com/)

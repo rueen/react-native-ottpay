@@ -42,8 +42,6 @@ public class OttpayModule extends ReactContextBaseJavaModule implements ReceiveP
     return constants;
   }
 
-//    private static String preSignStr;
-
   @ReactMethod
   public void pay(ReadableMap options) {
     runOnUiThread(new Runnable() {
@@ -65,21 +63,12 @@ public class OttpayModule extends ReactContextBaseJavaModule implements ReceiveP
         preSign.notifyUrl=options.getString("notifyUrl");
         preSign.payChannelType=options.getString("payChannelType");
         preSign.mhtSignature=options.getString("mhtSignature");
-        
-        // preSign.appId="1627353991468111";
-        // preSign.mhtAmtCurrFlag="1";
-        // preSign.mhtCharset="UTF-8";
-        // preSign.mhtCurrencyType="USD";
-        // preSign.mhtOrderAmt="100";
-        // preSign.mhtOrderDetail="test";
-        // preSign.mhtOrderName="鼠标";
-        // preSign.mhtOrderNo="20211023162825";
-        // preSign.mhtOrderStartTime="20211023162825";
-        // preSign.mhtOrderTimeOut="3600";
-        // preSign.mhtOrderType="01";
-        // preSign.notifyUrl="http://localhost:10802/";
-        // preSign.payChannelType="90";
-        // preSign.mhtSignature="7b8afe9218e924791f38b95a1d6e23ed";
+        preSign.deviceType=options.getString("deviceType");
+
+        if("80".equals(options.getString("payChannelType").toString())){
+          // 微信子账号
+          preSign.mhtSubAppId=options.getString("mhtSubAppId");
+        }
 
         Activity currentActivity = getCurrentActivity();
         CrossUnionPayPlugin.getInstance().setCallResultReceiver(OttpayModule.this).pay(preSign, currentActivity);// 传入请求数据
