@@ -13,6 +13,9 @@ npm install react-native-ottpay --save
 ```
 # RN < 0.60
 react-native link react-native-ottpay
+
+# RN > 0.60
+cd ios && pod install && cd ..
 ```
 
 ### Manual linking
